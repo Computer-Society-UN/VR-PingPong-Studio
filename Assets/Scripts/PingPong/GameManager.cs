@@ -90,7 +90,7 @@ namespace PingPong
                 _counterRound2FailuresNotHit = _counterRound2Balls - (_counterRound2Hits - _counterRound2FailuresHit);
             }
 
-            switch (gameMode)
+            switch (Instance.gameMode)
             {
                 case GameMode.Tutorial:
                 {
@@ -235,7 +235,7 @@ namespace PingPong
 
         public void KickBall(BallColor ballColor)
         {
-            switch (gameMode)
+            switch (Instance.gameMode)
             {
                 case GameMode.Tutorial:
                     _counterTutorialHits++;
@@ -256,14 +256,12 @@ namespace PingPong
                     break;
                 case GameMode.Wait2:
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
         }
         
         public void PlayerHit(BallColor ballColor)
         {
-            switch (gameMode)
+            switch (Instance.gameMode)
             {
                 case GameMode.Tutorial:
                     break;
@@ -277,8 +275,6 @@ namespace PingPong
                     break;
                 case GameMode.Wait2:
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
         }
         
@@ -286,13 +282,13 @@ namespace PingPong
         {
             yield return new WaitForSeconds(1f);
             TextWriter textWriter = new StreamWriter(_fileName, false);
-            textWriter.WriteLine("                 Round 1 / Round 2");
+            textWriter.WriteLine("DATOS       Round 1 / Round 2");
             textWriter.Close();
             
             textWriter = new StreamWriter(_fileName, true);
             textWriter.WriteLine("Aciertos:          " + _counterRound1Hits + "," + _counterRound2Hits);
-            textWriter.WriteLine("Fallos Golpe:      " + _counterRound1FailuresHit + "        " + _counterRound2FailuresHit);
-            textWriter.WriteLine("Fallos No Golpe:   " + _counterRound1FailuresNotHit + "        " + _counterRound2FailuresNotHit);
+            textWriter.WriteLine("Fallos Golpe:      " + _counterRound1FailuresHit + "," + _counterRound2FailuresHit);
+            textWriter.WriteLine("Fallos No Golpe:   " + _counterRound1FailuresNotHit + "," + _counterRound2FailuresNotHit);
             textWriter.Close();
         }
 

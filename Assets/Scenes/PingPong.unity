@@ -1168,16 +1168,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e4771f53f44268ad5ba4fa5b89c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutesTutorial: 0
-  secondsTutorial: 15
-  minutesRound1: 0
-  secondsRound1: 30
-  minutesRound2: 0
-  secondsRound2: 30
-  minutesWait1: 0
-  secondsWait1: 15
+  minutesTutorial: 3
+  secondsTutorial: 0
+  minutesRound1: 6
+  secondsRound1: 0
+  minutesRound2: 6
+  secondsRound2: 0
+  minutesWait1: 1
+  secondsWait1: 0
   minutesWait2: 0
-  secondsWait2: 20
+  secondsWait2: 30
   tutorialLimitBallsHit: 50
   round1LimitBallsHit: 50
   round2LimitBallsHit: 50
